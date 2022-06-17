@@ -43,7 +43,7 @@ main() {
 		exit 0
 
 	elif [ "$(echo "${LIC[$1]}")" ]; then
-		echo "${LIC[$1]}" | sed "s/\$YEAR/$(date +%Y)/g; s/\$COPYRIGHT/$COPYRIGHT/g; s/\$EMAIL/$EMAIL/g"
+		echo "${LIC[$1]}" | sed "s/\$YEAR/$YEAR/g; s/\$COPYRIGHT/$COPYRIGHT/g; s/\$EMAIL/$EMAIL/g"
 		exit 0
 	else
 		echo "Invalid Arguments or Unsupported License."
