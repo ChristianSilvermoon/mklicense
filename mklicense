@@ -13,7 +13,8 @@ help_opt_line() {
 }
 
 help_msg() {
-	echo -e "\e[1m$0 - Prints Text of Software License\n\nUSAGE\n\e[22m$0 [OPT] [LICENSE]\n"
+	local com=${0##*\/}
+	echo -e "\e[1m$com - Prints Text of Software License\n\nUSAGE\n\e[22m$com [OPT] [LICENSE]\n"
 
 	echo -e "\e[1mARGUMENTS\e[22m" 
 	help_opt_line "-?, --help" "Display This Message"
@@ -29,9 +30,9 @@ help_msg() {
 	echo -e "\n\e[2m  You can control how certain information is substituted by\n  exporting the above variables\n\n  This information will be autofilled using 'git' and 'date' if possible.\e[22m"
 
 	echo -e "\n\e[1mEXAMPLE USES\e[22m"
-	echo "  $0 mit             Print MIT License to terminal"
-	echo "  $0 mit > LICENSE   Write License to file"
-	echo "  YEAR=1986 $0 mit   Use a year other than current"
+	echo "  $com mit             Print MIT License to terminal"
+	echo "  $com mit > LICENSE   Write License to file"
+	echo "  YEAR=1986 $com mit   Use a year other than current"
 }
 
 # Main is called after defining the license array to avoid having to scroll past
